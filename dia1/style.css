@@ -21,6 +21,7 @@ ESTRUTURA BASE
     --cor-background-header-footer: white;
     --cor-texto-primaria: #636363;
     --cor-texto-secundaria: black;
+    --cor-botao-dark-mode: #d4e9ff;
 }
 
 /* ESTILOS GERAIS */
@@ -134,7 +135,7 @@ main .coluna{
 main .coluna-esquerda{}
 main .coluna-direita{}
 main .coluna section{
-    border-bottom: 1px solid #d4e9ff;
+    border-bottom: 1px solid var(--cor-botao-dark-mode);
     margin: 0 0 20px;
     min-height: 154px;
     color: var(--cor-texto-secundaria);
@@ -169,8 +170,37 @@ main .coluna section ul li p{}
     height: 50px;
     display: none;
 }
+header .container{
+    position: relative;
+}
 label{
-    border: solid 2px red;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 52px;
+    height: 30px;
+    background-color: var(--cor-background-secundaria);
+    border-radius: 20px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+label span{
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: var(--cor-botao-dark-mode);
+    border-radius: 100%;
+    transition: all ease .3s;
+}
+.ativar-dark:checked ~ .dark-mode label{
+    background-color: var(--cor-botao-dark-mode);
+}
+.ativar-dark:checked ~ .dark-mode label span{
+    background-color: var(--cor-background-secundaria);
+    /*margin-left: 20px;*/
+    transform: translateX(22px);
+    transition: all ease .3s;
 }
 .ativar-dark:checked ~ .dark-mode{
     --cor-background-primaria: black;
@@ -219,7 +249,7 @@ label{
         padding: 0;
     }
     main .coluna section{
-        border: 1px solid #d4e9ff;
+        border: 1px solid var(--cor-botao-dark-mode);
         padding: 20px;
     }
 }
