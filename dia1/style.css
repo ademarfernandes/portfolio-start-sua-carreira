@@ -15,6 +15,7 @@ ESTRUTURA BASE
 :root{
     --max-width-padrao: 1125px;
     --cor-frente-padrao: rgb(212, 116, 5);
+
     --cor-background-primaria: cadetblue;
     --cor-background-secundaria: #04133d;
     --cor-background-header-footer: white;
@@ -163,6 +164,30 @@ main .coluna section ul li strong{
 main .coluna section ul li p{}
 
 /* EXTRAS */
+.ativar-dark{
+    width: 50px;
+    height: 50px;
+    display: none;
+}
+label{
+    border: solid 2px red;
+}
+.ativar-dark:checked ~ .dark-mode{
+    --cor-background-primaria: black;
+    --cor-background-secundaria: #000;
+    --cor-texto-primaria: white;
+    --cor-texto-secundaria: #fff;
+    /*--cor-background-header-footer: white;*/
+}
+.ativar-dark:checked ~ .dark-mode header{
+    background-color: var(--cor-background-secundaria);
+}
+.ativar-dark:checked ~ .dark-mode header .container{
+    background-color: var(--cor-background-secundaria);
+}
+.ativar-dark:checked ~ .dark-mode main{
+    background-color: var(--cor-background-secundaria);
+}
 
 /* @MEDIA */
 /* Utilizar neste trecho todo código para formataçao de telas maiores que 768px */
